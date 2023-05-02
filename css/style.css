@@ -273,3 +273,46 @@ img {
   padding-top: 0;
   padding-bottom: 36px;
 }
+
+/* ***INFORM NEW PRODUCT*** */
+.section-new-heading {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 55px;
+  color: #000000;
+  position: relative;
+}
+.section-new-heading::before {
+  content: "";
+  position: absolute;
+  bottom: 20%;
+  left: -20%;
+
+  background-image: url(/img/hero-img-for-logo.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 32px;
+  height: 25px;
+}
+.section-new-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 20%;
+  right: -20%;
+
+  background-image: url(/img/hero-img-for-logo.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotate(255deg);
+  width: 32px;
+  height: 25px;
+}
+.section-new-item {
+  background: #ffffff;
+  border-radius: 20px;
+}
+.section-new-item-box-info {
+  background: rgba(140, 50, 19, 0.06);
+  border-radius: 20px;
+}
