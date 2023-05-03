@@ -311,7 +311,7 @@ img {
 .section-new-list {
   display: flex;
   justify-content: space-between;
-  align-items: safe;
+  align-items: start;
   margin: 0;
   padding: 0;
 }
@@ -321,15 +321,21 @@ img {
   border-radius: 20px;
   padding: 10px;
   background-color: aliceblue;
+  height: 100%;
+}
+.section-new-item-img {
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .section-new-item-box {
   background: rgba(140, 50, 19, 0.06);
   border-radius: 20px;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+
+  display: grid;
+  grid-template-rows: minmax(1rem, 1fr) 1rem 1fr;
 }
 .section-new-item:not(:last-child) {
   margin-right: 30px;
