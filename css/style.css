@@ -30,6 +30,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 .header-left-list {
   display: flex;
@@ -47,6 +48,11 @@ img {
 }
 .header-left-item:not(:last-child) {
   margin-right: 46px;
+}
+@media (max-width: 1024px) {
+  .header-left-item:not(:last-child) {
+    margin-right: 26px;
+  }
 }
 .header-link__aboutUs {
   position: relative;
@@ -82,6 +88,54 @@ img {
 
   background-repeat: no-repeat;
   background-size: 100% auto;
+}
+.header-burgger {
+  display: none;
+}
+@media (max-width: 930px) {
+  .header-content {
+    padding: 10px 30px;
+
+    /* justify-content: space-evenly; */
+  }
+  .header-burgger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    z-index: 3;
+  }
+  .header-burgger span {
+    position: absolute;
+    background-color: #84be51;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+  }
+  .header-burgger::before,
+  .header-burgger::after {
+    content: "";
+    background-color: #84be51;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+  }
+  .header-burgger::before {
+    top: 0;
+  }
+  .header-burgger::after {
+    bottom: 0;
+  }
+  .header-middle-line {
+    display: none;
+    height: 0;
+    width: 0;
+  }
+  .header-left-list {
+    display: none;
+  }
 }
 
 /* ***HEADER_DOWN*** */
