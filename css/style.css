@@ -21,9 +21,13 @@ img {
 }
 
 /* ***HEADER*** */
-.header-top {
+.header {
+  position: relative;
   background-color: #21603f;
   color: #fff;
+}
+.header-container {
+  position: relative;
 }
 .header-content {
   height: 100%;
@@ -95,8 +99,6 @@ img {
 @media (max-width: 930px) {
   .header-content {
     padding: 10px 30px;
-
-    /* justify-content: space-evenly; */
   }
   .header-burgger {
     display: block;
@@ -139,6 +141,10 @@ img {
 }
 
 /* ***HEADER_DOWN*** */
+.header-down {
+  position: absolute;
+  left: 0;
+}
 .header-down-content__top {
   padding-top: 18px;
   display: flex;
@@ -181,6 +187,7 @@ img {
 }
 .header-down-content-search__btn:hover {
   cursor: pointer;
+  color: #1e6140;
 }
 .header-down-content-contact {
   flex: 1 1 auto;
@@ -191,49 +198,57 @@ img {
 }
 .header-down-content-icon__list {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   padding-left: 0;
+  margin: 0;
 }
-
 .header-down-content-icon__item:not(:last-child) {
   margin-right: 16px;
 }
 .header-down-content-icon__item {
-  padding: 12px;
+  display: flex;
+  align-items: center;
+}
+.header-down-content-icon__link {
+  display: inline-block;
+  width: 41px;
+  height: 41px;
   border: 1px solid #8d3200;
   border-radius: 50%;
+  color: #8d3200;
+  line-height: 0;
+  position: relative;
 }
-.header-down-content-icon__item:hover,
-.header-down-content-icon__item:hover .header-icon {
+.header-down-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  line-height: 0;
+}
+.header-down-content-icon__link:hover,
+.header-down-content-icon__link:hover .header-icon {
   background-color: #8d3200;
   color: #fff;
 }
-.header-icon {
-  display: block;
-  color: #8d3200;
-  height: 16px;
-  width: 16px;
-}
-
 .header-down-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   padding: 0;
   column-gap: 22px;
 }
-.header-down-item {
-  padding: 5px 15px 5px 15px;
-  border: 1px solid #1e6140;
-  border-radius: 22px;
-  text-align: left;
-  max-width: 200px;
-}
 .header-down-item:last-child {
   justify-self: end;
 }
 .header-down-link {
+  padding: 5px 15px 5px 15px;
+  height: 100%;
+  max-width: 200px;
+  border-radius: 22px;
+  border: 1px solid #1e6140;
   text-transform: uppercase;
+  text-align: left;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -266,7 +281,7 @@ img {
 /* ***HERO*** */
 .section-hero {
   position: relative;
-  /* overflow: hidden; */
+  height: 100vk;
 }
 .section-hero::before {
   content: "";
@@ -280,7 +295,7 @@ img {
   z-index: -1;
 }
 .hero-container {
-  padding-top: 190px;
+  padding-top: 350px;
   padding-bottom: 336px;
   position: relative;
 }
@@ -440,21 +455,22 @@ img {
   width: 32px;
   height: 25px;
 }
-.section-new-list {
+/* .section-new-list {
   display: flex;
   justify-content: space-between;
   align-items: start;
   margin: 0;
   padding: 0;
   position: relative;
-}
+} */
 .section-new-item {
-  /* background: #ffffff; */
-  flex: 1 1 25%;
+  /* flex: 1 1 25%;
   border-radius: 20px;
   padding: 10px;
   background-color: aliceblue;
-  height: 100%;
+  height: 100%; */
+
+  margin-right: 20px;
 }
 .section-new-item-img {
   padding-bottom: 20px;
@@ -470,9 +486,9 @@ img {
   display: grid;
   grid-template-rows: minmax(1rem, 1fr) 1rem 1fr;
 }
-.section-new-item:nth-last-child(n + 4) {
+/* .section-new-item:nth-last-child(n + 4) {
   margin-right: 30px;
-}
+} */
 .section-nav-left,
 .section-nav-right {
   position: absolute;
@@ -532,15 +548,26 @@ img {
   padding-bottom: 8px;
 }
 .section-new-item-box-info__icon {
+  height: 47px;
+  width: 47px;
   background: #ffffff;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
   border-radius: 50%;
+
   color: #8c3213;
-  padding: 15px;
+  position: relative;
 }
 .section-new-item-box-info__icon:hover {
   color: #fff;
   background: #8c3213;
+}
+.section-new-item-box-info__icon svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  line-height: 0;
 }
 
 /* ***ACTION_PRODUCT*** */
@@ -724,8 +751,6 @@ img {
   color: #8d3200;
   height: 16px;
   width: 16px;
-
-  /* transform: translateY(5px); */
 
   background-repeat: no-repeat;
   background-size: contain;
